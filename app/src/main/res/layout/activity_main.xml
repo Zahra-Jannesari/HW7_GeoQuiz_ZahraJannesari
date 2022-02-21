@@ -10,92 +10,93 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical2"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical1"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal1" />
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:flow_horizontalBias="0.5"
+        android:layout_marginHorizontal="16dp"
+        android:gravity="center"
+       />
 
     <Button
         android:id="@+id/button_trueAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/trueButton"
         app:layout_constraintEnd_toStartOf="@+id/button_falseAnswer"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:backgroundTint="@color/grayButton"
+        android:textColor="@color/textColor"/>
 
     <Button
         android:id="@+id/button_falseAnswer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/falseButton"
+        app:layout_constraintBottom_toBottomOf="@+id/button_trueAnswer"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_trueAnswer"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/button_trueAnswer"
+        android:backgroundTint="@color/grayButton"
+        android:textColor="@color/textColor"/>
 
     <Button
         android:id="@+id/button_Cheat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal2"
+        android:text="@string/cheat"
+        app:layout_constraintBottom_toTopOf="@+id/button_prev"
         app:layout_constraintEnd_toEndOf="@+id/button_next"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/button_prev"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal1"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintTop_toBottomOf="@+id/button_trueAnswer"
+        app:layout_constraintVertical_bias="0.8"
+        android:backgroundTint="@color/grayButton"
+        android:textColor="@color/textColor"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_prev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal2"
+        android:backgroundTint="@color/grayButton"
+        android:text="@string/prev"
+        android:textColor="@color/textColor"
+        app:icon="@drawable/ic_baseline_navigate_before_24"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconTint="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button_trueAnswer"
-        app:layout_constraintEnd_toStartOf="@+id/button_next"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/guideline_vertical1" />
+        app:layout_constraintStart_toStartOf="@+id/button_trueAnswer"
+        app:layout_constraintTop_toBottomOf="@+id/button_trueAnswer"
+        app:layout_constraintVertical_bias="0.3"
+        android:padding="0dp"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_prev" />
+        android:backgroundTint="@color/grayButton"
+        android:text="@string/next"
+        android:textColor="@color/textColor"
+        app:icon="@drawable/ic_baseline_navigate_next_24"
+        app:iconGravity="textEnd"
+        app:iconPadding="0dp"
+        app:iconTint="@color/textColor"
+        app:layout_constraintBottom_toBottomOf="@+id/button_prev"
+        app:layout_constraintEnd_toEndOf="@+id/button_falseAnswer"
+        app:layout_constraintStart_toStartOf="@+id/button_falseAnswer"
+        app:layout_constraintTop_toTopOf="@+id/button_prev"
+        android:padding="0dp"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
 </androidx.constraintlayout.widget.ConstraintLayout>

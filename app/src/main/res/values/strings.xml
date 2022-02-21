@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">GeoQuiz</string>
+    <string name="trueButton">TRUE</string>
+    <string name="falseButton">FALSE</string>
+    <string name="cheat">CHEAT!</string>
+    <string name="prev">PREV</string>
+    <string name="next">NEXT</string>
+    <string name="Question1">Nile River is the longest river in the world.</string>
+    <string name="Question1_Answer">true</string>
+    <string name="Question2">Ottawa is the capital of Canada.</string>
+    <string name="Question2_Answer">true</string>
+
 </resources>
