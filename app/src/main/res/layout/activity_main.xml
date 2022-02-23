@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text=""
@@ -31,8 +31,8 @@
         app:layout_constraintEnd_toStartOf="@+id/button_falseAnswer"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView_question"
+        app:layout_constraintTop_toBottomOf="@+id/textView_question"
         android:backgroundTint="@color/grayButton"
         android:textColor="@color/textColor"/>
 
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:text="@string/falseButton"
         app:layout_constraintBottom_toBottomOf="@+id/button_trueAnswer"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/textView_question"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_trueAnswer"
         app:layout_constraintTop_toTopOf="@+id/button_trueAnswer"
