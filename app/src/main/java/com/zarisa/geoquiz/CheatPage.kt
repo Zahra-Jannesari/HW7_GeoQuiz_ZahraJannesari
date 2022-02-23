@@ -21,17 +21,18 @@ class CheatPage : AppCompatActivity() {
         binding2= ActivityCheatPageBinding.inflate(layoutInflater)
         var view=binding2.root
         setContentView(view)
+
         numberOfPage=intent?.getIntExtra(number,0)
         binding2.buttonShowInfo.setOnClickListener {
             binding2.textViewCheat.text=questionAnswers[numberOfPage!!]
             resultOfCheat=1
         }
-        }
+    }
     override fun onBackPressed() {
         super.onBackPressed()
         val intent2= Intent(this,MainActivity::class.java)
         intent2.putExtra(cheat,resultOfCheat)
-        setResult(RESULT_OK,intent2)
+        setResult(RESULT_OK,intent)
         finish()
     }
 

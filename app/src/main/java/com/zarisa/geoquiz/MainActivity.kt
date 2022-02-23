@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode==1&&resultCode== RESULT_OK){
-            var resultOfCheat=intent.getIntExtra(cheat,0)
+            val resultOfCheat=intent.getIntExtra(cheat,0)
             if(resultOfCheat==1)
                 cheated=true
         }
