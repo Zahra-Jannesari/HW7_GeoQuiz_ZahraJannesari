@@ -3,9 +3,13 @@ package com.zarisa.geoquiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Toast
 import com.zarisa.geoquiz.databinding.ActivityCheatPageBinding
 import com.zarisa.geoquiz.databinding.ActivityMainBinding
+
+
+
 const val number="number"
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -18,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         "The United States military has lost 6 nuclear weapons to this date.", "Teddy bear is named after it's creator's son.",
         "Puma and Adidas founders were brothers.", "Barack Obama was the tallest American president.")
     private var answerList= arrayOf(true, true, false, true, true, false, true, false, true, false)
-    var cheated=false
+    private var cheated=false
+    var haveBeenAnswered=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
@@ -35,6 +40,13 @@ class MainActivity : AppCompatActivity() {
             binding.buttonNext.isClickable=false
         }
         binding.textViewQuestion.text=questionList[numberOfPage]
+        if (haveBeenAnswered){
+            binding.buttonFalseAnswer.isClickable = false
+            binding.buttonTrueAnswer.isClickable = false
+        }else{
+            binding.buttonFalseAnswer.isClickable = true
+            binding.buttonTrueAnswer.isClickable = true
+        }
     }
     private fun setOnClickListeners() {
         binding.buttonTrueAnswer.setOnClickListener { checkAnswer(true) }
@@ -82,5 +94,22 @@ class MainActivity : AppCompatActivity() {
         binding.buttonPrev.isClickable=true
         binding.buttonNext.isClickable=true
         primaryInit()
+    }
+
+    //android:configChanges="orientation|screenSize|keyboardHidden"
+
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        outState.putBoolean("haveBeenAnswered",haveBeenAnswered)
+//        super.onSaveInstanceState(outState)
+//    }
+//
+//    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+//        super.onRestoreInstanceState(savedInstanceState)
+//        haveBeenAnswered=savedInstanceState.getBoolean("haveBeenAnswered")
+//    }
+
+
+    override fun onPause() {
+        super.onPause()
     }
 }
