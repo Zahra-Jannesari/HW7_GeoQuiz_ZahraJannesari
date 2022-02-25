@@ -13,7 +13,7 @@ import com.zarisa.geoquiz.databinding.ActivityMainBinding
 const val number="number"
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    var numberOfPage=0
+    private var numberOfPage=0
     private var maxNumberOfPages=9
     private var questionList: Array<String> = arrayOf(
         "Nile River is the longest river in the world.", "Ottawa is the capital of Canada.",
@@ -23,12 +23,14 @@ class MainActivity : AppCompatActivity() {
         "Puma and Adidas founders were brothers.", "Barack Obama was the tallest American president.")
     private var answerList= arrayOf(true, true, false, true, true, false, true, false, true, false)
     private var cheated=false
-    var haveBeenAnswered=false
+    private var haveBeenAnswered:Boolean?=false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
         var view=binding.root
         setContentView(view)
+
+//        haveBeenAnswered=savedInstanceState?.getBoolean("haveBeenAnswered")
         primaryInit()
         setOnClickListeners()
     }
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             binding.buttonNext.isClickable=false
         }
         binding.textViewQuestion.text=questionList[numberOfPage]
-        if (haveBeenAnswered){
+        if (haveBeenAnswered == true){
             binding.buttonFalseAnswer.isClickable = false
             binding.buttonTrueAnswer.isClickable = false
         }else{
@@ -99,10 +101,11 @@ class MainActivity : AppCompatActivity() {
     //android:configChanges="orientation|screenSize|keyboardHidden"
 
 //    override fun onSaveInstanceState(outState: Bundle) {
-//        outState.putBoolean("haveBeenAnswered",haveBeenAnswered)
-//        super.onSaveInstanceState(outState)
-//    }
 //
+//        super.onSaveInstanceState(outState)
+//        haveBeenAnswered?.let { outState.putBoolean("haveBeenAnswered", it) }
+//    }
+
 //    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
 //        super.onRestoreInstanceState(savedInstanceState)
 //        haveBeenAnswered=savedInstanceState.getBoolean("haveBeenAnswered")
