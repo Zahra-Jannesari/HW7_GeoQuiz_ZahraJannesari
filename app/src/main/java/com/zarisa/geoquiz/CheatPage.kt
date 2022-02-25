@@ -15,7 +15,6 @@ class CheatPage : AppCompatActivity() {
         "The teddy bear is named after President Theodore Roosevelt. After he refused to shoot a captured black bear on a hunt, a stuffed-animal maker decided to create a bear and name it after the president.",
         "Puma and Adidas founders were brothers.", "Abraham Lincoln was the tallest American president.(193cm)")
     var numberOfPage:Int?=0
-    var resultOfCheat=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding2= ActivityCheatPageBinding.inflate(layoutInflater)
@@ -25,15 +24,8 @@ class CheatPage : AppCompatActivity() {
         numberOfPage=intent?.getIntExtra(number,0)
         binding2.buttonShowInfo.setOnClickListener {
             binding2.textViewCheat.text=questionAnswers[numberOfPage!!]
-            resultOfCheat=1
+            QuestionList.listOfQuestions[numberOfPage!!].isCheated=true
         }
-    }
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val intent2= Intent(this,MainActivity::class.java)
-        intent2.putExtra(cheat,resultOfCheat)
-        setResult(RESULT_OK,intent)
-        finish()
     }
 
 }
