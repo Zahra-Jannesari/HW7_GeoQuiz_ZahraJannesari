@@ -1,7 +1,7 @@
 package com.zarisa.geoquiz
 
 import androidx.lifecycle.ViewModel
-class ViewModel1 : ViewModel(){
+class ViewModel : ViewModel(){
     fun getTotalNumberOfQuestions():Int{
         return DataBank.listOfQuestions.size
     }
