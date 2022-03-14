@@ -35,7 +35,7 @@ class QuestionFragment : Fragment() {
         if(numberOfPage==0){
             binding.buttonPrev.isEnabled = false
         }
-        if (numberOfPage==viewModel.getTotalNumberOfQuestions()){
+        if (numberOfPage==viewModel.getTotalNumberOfQuestions()-1){
             binding.buttonNext.isEnabled=false
         }
         binding.textViewQuestion.text=viewModel.getQuestionText(numberOfPage)
