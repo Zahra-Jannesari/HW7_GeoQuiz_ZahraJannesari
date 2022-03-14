@@ -20,4 +20,10 @@ class ViewModel1 : ViewModel(){
     fun getIsAnswered(numberOfPage:Int):Boolean{
         return DataBank.listOfQuestions[numberOfPage].isAnswered
     }
+    fun setAnswering(numberOfPage:Int){
+        DataBank.listOfQuestions[numberOfPage].isAnswered=true
+    }
+    fun setCheating(numberOfPage: Int){
+        DataBank.listOfQuestions[numberOfPage].isCheated=true
+    }
 }
