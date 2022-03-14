@@ -22,5 +22,8 @@
         <action
             android:id="@+id/action_cheatFragment_to_questionFragment"
             app:destination="@id/questionFragment" />
+        <argument
+            android:name="numberOfQuestion"
+            app:argType="integer" />
     </fragment>
 </navigation>
