@@ -33,10 +33,10 @@ class QuestionFragment : Fragment() {
     }
     private fun primaryInit() {
         if(numberOfPage==0){
-            binding.buttonPrev.isClickable = false
+            binding.buttonPrev.isEnabled = false
         }
         if (numberOfPage==viewModel.getTotalNumberOfQuestions()){
-            binding.buttonNext.isClickable=false
+            binding.buttonNext.isEnabled=false
         }
         binding.textViewQuestion.text=viewModel.getQuestionText(numberOfPage)
         if (viewModel.getIsAnswered(numberOfPage)){
@@ -74,16 +74,16 @@ class QuestionFragment : Fragment() {
         }else{
             Toast.makeText(context,"Incorrect!", Toast.LENGTH_SHORT).show()
         }
-        binding.buttonFalseAnswer.isClickable = false
-        binding.buttonTrueAnswer.isClickable = false
+        binding.buttonFalseAnswer.isEnabled = false
+        binding.buttonTrueAnswer.isEnabled = false
         viewModel.setAnswering(numberOfPage)
     }
     private fun restartThePage(){
 //        binding.buttonTrueAnswer.isClickable=true
 //        binding.buttonFalseAnswer.isClickable=true
-        binding.buttonCheat.isClickable=true
-        binding.buttonPrev.isClickable=true
-        binding.buttonNext.isClickable=true
+        binding.buttonCheat.isEnabled=true
+        binding.buttonPrev.isEnabled=true
+        binding.buttonNext.isEnabled=true
         primaryInit()
     }
 }
